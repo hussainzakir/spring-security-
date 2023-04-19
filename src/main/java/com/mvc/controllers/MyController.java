@@ -27,47 +27,30 @@ public class MyController {
 
 	@Autowired
 	Mydao dao;
-	
+
 	@Autowired
 	UserTableDataDao userDao;
-	
-	@RequestMapping("/home")
+
+	@RequestMapping("/auth/homepage")
 	public String test(Model m) {
-		List<UserTableData> e = userDao.findByUsername();
-		m.addAttribute("zak", e);
-		return"home";
+		return "homepage";
 	}
-	
-	@RequestMapping("/adminLogin")
-	public String home(Model m) {
-		List<MyBean> res = dao.getEmployees();
-		m.addAttribute("empDetails", res);
-		return "homeAdmin";
+
+	@GetMapping("/login")
+	public String login(@ModelAttribute("userdata") UserTableData userdata) {	
+		return "login";
 	}
-	
-	/*
-	 * @GetMapping("/login") public String login(@ModelAttribute("userdata")
-	 * UserTableData userdata ) { return "login"; }
-	 */
-	
-	
-	@RequestMapping(value="/login", method=RequestMethod.GET)
-	   public String login(ModelMap model) {
-	      return "login";
-	   }
-	
-	
-	
-	@RequestMapping( value ="/saveform", method = RequestMethod.POST)
-	public String retriveLogin(@ModelAttribute("userdata")  UserTableData userdata) {
+
+	@RequestMapping(value = "auth/saveform", method = RequestMethod.POST)
+	public String retriveLogin(@ModelAttribute("userdata") UserTableData userdata) {
 		System.out.println(userdata);
-		
-	
-	    
-		return "redirect:/home";
+		return "test";
 	}
-	
 
 	
-	 
+	@RequestMapping(value = "auth/admin/test")
+	public String home1() {
+		return "test";
+	}
+		
 }
