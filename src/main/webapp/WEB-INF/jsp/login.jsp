@@ -39,67 +39,28 @@
 	crossorigin="anonymous"></script>
 
 
-<title>Spring Security</title>
-<style type="text/css">
-		.card-divider {
-			border-bottom: 1px solid #ccc;
-		}
-		
-		input::placeholder {
-			font-size: 12px;
-			color: red;
-		}
-</style>
+<title>Security LogIn</title>
 </head>
 
 <body>
-<!-- 	<div class="d-flex justify-content-center align-items-center"
-		id="login-card" style="height: 100vh;">
-		<div class="card" style="width: 20em;">
-			<div class="card-body">
-				<h3 class="card-title" style="display: flex; justify-content: center; align-items: center; font-family: monospace;">Login</h3>
-				<div class="mb-3">
-					<label for="username" class="form-label" style=" font-size: 14px;">Username</label> <input
-						type="text" class="form-control" id="username"
-						placeholder="enter your username"  style="border: none; border-bottom: 1px solid #ccc; height: 27px; ">
-				</div>
-				<div class="mb-3">
-					<label for="password" class="form-label" style=" font-size: 14px;">Password</label> <input
-						type="password" class="form-control" id="password"
-						placeholder="enter your password"  style="border: none; border-bottom: 1px solid #ccc; height: 27px;">
-				</div><br><br>
-				<div class="d-grid">
-			    <button type="button" class="btn btn-outline-dark">logIn</button>
-			    </div>
-			    <br><br>
-				<div class="mb-3">
-				<div class="card-divider"></div><br><br>
-				<p style="display: flex; justify-content: center; align-items: center; font-size: 12px">Don't have a Account</p>
-				<a href="signupForm" style="display: flex; justify-content: center; align-items: center; text-decoration: none; color: black; font-weight: bold"><spam>SIGNUP</spam></a>
-				</div>
-			</div>
-		</div>
-	</div> -->
-	
-<%-- 	<h2> SignIn here !!</h2>
-	<form:form action="saveform" method="post" modelAttribute="userdata">
-		
-	username :<form:input path="username"/>
-	<br>
-	password :<form:input path="password"/>
-	<button value="loginDetails">submit</button>
-	</form:form> --%>
-	
-	
-	
-	 <h1>Login Page</h1>
-      <form action="/login" method="post">
-         <label for="username">Username:</label>
-         <input type="text" id="username" name="username"><br><br>
-         <label for="password">Password:</label>
-         <input type="password" id="password" name="password"><br><br>
-         <input type="submit" value="Login">
-      </form>
-      
+
+  	<h1>Login</h1>
+	<form name='f' action="admin/saveform" method='POST' modelAttribute="userdata">
+		<table>
+			<tr>
+				<td>User:</td>
+				<td><input type='text' name='username'></td>
+			</tr>
+			<tr>
+				<td>Password:</td>
+				<td><input type='password' name='password' /></td>
+			</tr>
+			<tr>
+				<td><button type="submit" value="submit">submit</button></td>
+			</tr>
+		</table>
+	</form>
+
+
 </body>
 </html>
