@@ -9,21 +9,7 @@
 <title>Insert title here</title>
 </head>
 <body>
-<table class="table">
-  <thead>
-    <tr>
-      <th scope="col">Employee ID</th>
-    </tr>
-  </thead>
-  <tbody class="table-group-divider">
-	<c:forEach var="emp" items="${zak}">
-		    <tr>
-		    	<td>${emp.username}</td>
 
-   			 </tr>
-	</c:forEach>
-
-  </tbody>
-</table>
+this is home user logged in successfully
 </body>
 </html>
